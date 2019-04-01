@@ -25,13 +25,17 @@ for row in inputFile:
 
 inputFile.close()
 
+
+def compute_mean_rating(rating_list):
+    cnt = len(rating_list)
+    print('Number of ratings: ', cnt)
+
+    total = sum(rating_list)
+    print('Sum: ', total)
+
+    avg = total / cnt
+    print('Average: ', avg)
+
+
 print('--- Ratings Snapshot ---')
-
-cnt = len(ratings)
-print('Number of ratings: ', cnt)
-
-sum = sum(ratings)
-print('Sum: ', sum)
-
-avg = sum / cnt
-print('Average: ', avg)
+compute_mean_rating(ratings)
