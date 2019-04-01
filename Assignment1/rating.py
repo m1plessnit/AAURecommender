@@ -1,5 +1,30 @@
 FILE_RATINGS_CSV = '../MovieLens/ratings.csv'
 
+import operator
+
+def calc_mean(ratings):
+    cnt = len(ratings)
+    total = sum(ratings)
+    return total / cnt
+
+
+def calc_mode(ratings):
+    result = {}
+
+    for i in ratings:
+        if i not in result:
+            result[i] = ratings.count(i)
+
+    sorted_result = sorted(result.items(), key=operator.itemgetter(1))
+    #print(sorted_result)
+
+    return sorted_result[len(sorted_result)-1][0]
+
+
+def calc_median(ratings):
+    cnt = len(ratings)
+    return ratings[int(cnt/2)]
+
 
 def compute_mean_rating(file_name):
     ratings = []
@@ -7,7 +32,7 @@ def compute_mean_rating(file_name):
     try:
         input_file = open(file_name, 'r')
     except FileNotFoundError:
-        print("ERROR: File could not be found")
+        print("ERROR: given file - ' + file_name + ' could not be found")
         exit()
 
     # Skip first line (if any)
@@ -33,34 +58,31 @@ def compute_mean_rating(file_name):
 
     input_file.close()
 
-    print('--- Calculation ---')
+    # Sort ratings ascending
+    ratings.sort()
 
-    cnt = len(ratings)
-    print('Number of ratings: ', cnt)
+    # Mean: the average value
+    mean = calc_mean(ratings)
 
-    total = sum(ratings)
-    print('Sum: ', total)
+    # Mode: value that occurs most often
+    mode = calc_mode(ratings)
 
-    avg = total / cnt
-    print('Average: ', avg)
+    # Median: is the "middle" value in an ordered list of numbers
+    median = calc_median(ratings)
 
-    return avg
+    result_string = 'Mean: ' + str(mean) + '\nMode: ' + str(mode) + '\nMedian: ' + str(median)
+
+
+    return result_string
 
 
 def main():
 
-    print('--- Process ratings.csv ---')
-
+    print('\n--- Process ratings.csv ---')
     print('Read: ', FILE_RATINGS_CSV)
-    print()
 
-    mean_value = compute_mean_rating(FILE_RATINGS_CSV)
-    print()
-
-    print('--- Output ---')
-
-    print('Mean value: ', mean_value)
-    print()
+    print('\n--- Output ---')
+    print(compute_mean_rating(FILE_RATINGS_CSV))
 
 
 main()
