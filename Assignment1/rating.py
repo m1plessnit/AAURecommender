@@ -1,6 +1,6 @@
-FILE_RATINGS_CSV = '../MovieLens/ratings.csv'
-
 import operator
+
+FILE_RATINGS_CSV = '../MovieLens/ratings.csv'
 
 def calc_mean(ratings):
     cnt = len(ratings)
@@ -16,7 +16,7 @@ def calc_mode(ratings):
             result[i] = ratings.count(i)
 
     sorted_result = sorted(result.items(), key=operator.itemgetter(1))
-    #print(sorted_result)
+    # print(sorted_result)
 
     return sorted_result[len(sorted_result)-1][0]
 
@@ -48,10 +48,10 @@ def compute_mean_rating(file_name):
         #    print(repr(columns))
 
         # Map single columns to temporary data-types
-        userId = columns[0]  # ATM not used
-        movieId = columns[1]  # ATM not used
+        userId = columns[0]         # ATM not used
+        movieId = columns[1]        # ATM not used
         rating = float(columns[2])
-        timestamp = columns[3]  # ATM not used
+        timestamp = columns[3]      # ATM not used
 
         # Finally, build up ratings
         ratings.append(rating)
