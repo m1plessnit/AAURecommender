@@ -1,5 +1,5 @@
 import utilityModule
 
 statObject = utilityModule.Statistic()
-x = statObject.computeMeanRating('ratings.csv')
+x = statObject.computeMeanRating('../MovieLens/ratings.csv')
 print(x)

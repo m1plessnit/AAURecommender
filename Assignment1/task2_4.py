@@ -4,7 +4,7 @@ import operator
 FILE_RATINGS_CSV = '../MovieLens/movies.csv'
 
 def analyze(file_name):
-    with open(file_name) as csv_file:
+    with open(file_name, encoding="utf-8") as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
 
         result = {}
