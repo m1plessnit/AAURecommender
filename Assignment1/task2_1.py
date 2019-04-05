@@ -4,7 +4,7 @@ print('Script Start')
 ratings = []
 
 #open file
-f = open("ratings.csv", "r")
+f = open("../MovieLens/ratings.csv", "r")
 
 #store ratings in the list
 
