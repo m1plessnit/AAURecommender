@@ -17,5 +17,10 @@ CSV
 Example data
 * http://files.grouplens.org/datasets/movielens/ml-latest-small.zip
 
+## Assignment 2
 
+Example data
+* [The Movies Dataset](https://www.kaggle.com/rounakbanik/the-movies-dataset)
+    * rating_small.csv
+    * movies_metadata.csv
 

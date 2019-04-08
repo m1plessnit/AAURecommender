@@ -91,4 +91,4 @@ def isFloat(str):
 
 
 #call of main method
-print(computeMeanRating("ratings.csv"))
+print(computeMeanRating("../MovieLens/ratings.csv"))
