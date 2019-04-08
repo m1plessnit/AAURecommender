@@ -12,8 +12,8 @@ def main(file):
     # Group data by movieId
     df_grouped = df.groupby(df['movieId'])
 
-    # Display count of ratings per movieId
-    print(df_grouped.size())
+    # Display count of items per movieId
+    # print(df_grouped.size())
 
     for index, row in df_grouped:
         # Create per movieId a dictionary /w aggregated data

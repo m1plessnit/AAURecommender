@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-FILE_RATINGS_CSV = '../The-Movies-Dataset/movies_metadata.csv'
+CSV_FILE = '../The-Movies-Dataset/movies_metadata.csv'
 
 
 def main(file):
@@ -50,4 +50,4 @@ def to_float(x):
 
 
 if __name__ == '__main__':
-    main(FILE_RATINGS_CSV)
+    main(CSV_FILE)
